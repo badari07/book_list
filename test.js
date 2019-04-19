@@ -103,10 +103,9 @@ document.getElementById('book-form').addEventListener('submit', (e) => {
 
     const ui = new UI();
 
-
     if (title === '' || author === '' || isbn === '') {
         ui.showAlert('Please fill in all fields', 'error');
-
+       
     } else {
         ui.addBookToList(book);
         Store.addBook(book);
@@ -114,6 +113,7 @@ document.getElementById('book-form').addEventListener('submit', (e) => {
         ui.showAlert('Book Addede!', 'success')
         ui.clearFields();
     }
+    
 
     e.preventDefault();
 });
@@ -127,6 +127,3 @@ document.getElementById('book-list').addEventListener('click', (e) => {
     ui.showAlert('Book removed!', 'success');
 })
 
-// if(isbn==='isbn'){
-//     ui.showAlert('isbn nunber should be unique.try another number')
-// }
